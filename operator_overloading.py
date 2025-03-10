@@ -14,6 +14,7 @@ p2 = Point(1, 2)
 
 p3 = p1 + p2  # Calls __add__ method
 print(p3)  # Output: (4, 6)
+print(str(p1))
 
 '''__add__ is overridden to define how + behaves when adding two Point objects.
 The expression p1 + p2 internally calls p1.__add__(p2), returning a new Point object.'''
