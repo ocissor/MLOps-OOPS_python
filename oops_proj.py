@@ -4,14 +4,26 @@ class chatbook:
 
     def __init__(self):
         self.id = chatbook.user_id
-        chatbook.user_id += 1
+        #chatbook.user_id += 1
+        chatbook.update_user_id()
         self.username = ""
         self.password = ""
         self.loggedin = False
         self.username_list = ["rahul", "rohan", "ram"]
-        self.__name = "Default User"
+        self.__name = "Default User" #private variable
+        self._var = "random" #protected variable
 #        self.menu()
     
+
+    def __temp(self):
+        print("This is a private method")
+    
+    def _temp(self):
+        print("This is a protected method")
+
+    @classmethod
+    def update_user_id(cls):
+        cls.user_id += 1
 
     @staticmethod
     def get_user_id():
@@ -95,8 +107,11 @@ class chatbook:
             print("Please login to message a friend!")
 
         self.menu()
-    
+
+print(chatbook.user_id)
+chatbook.update_user_id()
 obj1 = chatbook() #object of class chatbook
+print(obj1._temp())
 print(obj1.id)
 obj2 = chatbook() #object of class chatbook
 print(obj2.id)
